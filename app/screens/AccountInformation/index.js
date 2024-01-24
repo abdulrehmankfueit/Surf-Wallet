@@ -146,7 +146,7 @@ export default function AccountInformation({navigation}) {
                       style={{color: BaseColor.text2, fontSize: 14}}
                     />
                     <CText
-                      value={passwordVisible ? pincode : '********'}
+                      value={passwordVisible ? state.pincode : '********'}
                       style={{
                         color: BaseColor.text1,
                         fontSize: 14,

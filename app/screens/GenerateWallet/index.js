@@ -21,11 +21,13 @@ import { mnemonic, generateWallet, wallet } from '../../utils/bip39.js';
 
 
 
+
 export default function GenerateWallet({navigation}) {
   const {dark} = useSelector(state => state.auth);
   const [BaseColor, setBaseColor] = useState(dark ? DarkColor : LightColor);
+
   const state = useSelector(state => state.wallet);
-  //  console.log('=======state====', state?.masterSeed)
+  // console.log('=======state====', state?.publicKey)
   const dispatch = useDispatch();
 
   let interval;
@@ -65,7 +67,7 @@ export default function GenerateWallet({navigation}) {
       });
     }, 1000);
 
-    // console.log('====wallet====',wallet)
+    console.log(wallet)
     setTimeout(() => {
       setprivateKey(wallet?.masterSeed);
       clearInterval(interval);
